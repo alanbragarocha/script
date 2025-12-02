@@ -1,0 +1,114 @@
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// EDITOR - Configurações Gerais
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{
+  "editor.formatOnSave": true, // Formata ao salvar o arquivo
+  "editor.formatOnPaste": true, // Formata ao colar
+  "editor.formatOnType": false, // Não formata ao digitar (pode causar lentidão)
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Define Prettier como formatador padrão global
+  "editor.tabSize": 2, // Tamanho de tabulação padrão de 2 (será sobrescrito pelo .editorconfig)
+  "editor.insertSpaces": true, // Usar espaços em vez de tabulações
+  "editor.detectIndentation": false, // Desativa a detecção automática para respeitar o .editorconfig
+  "editor.trimAutoWhitespace": true, // Remove espaços em branco automático
+  "editor.rulers": [], // Réguas visuais para JS/TS/HTML (80) e limite secundário (100)
+  "editor.wordWrap": "off", // Desativa a quebra automática de linha por padrão
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit", // OTIMIZAÇÃO: Corrige todas as regras do ESLint ao salvar (para JS/TS)
+    "source.fixAll": "explicit", // Tenta corrigir todas as outras ações (inclui Prettier, etc.)
+    "source.organizeImports": "explicit" // Organiza importações (útil para JS/TS/Python)
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // FILES - Configurações de Arquivos
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  "files.encoding": "utf8",
+  "files.eol": "\n", // Line endings Unix (LF), obrigatório para consistência
+  "files.insertFinalNewline": true, // Garante uma nova linha no final do arquivo
+  "files.trimTrailingWhitespace": true, // Remove espaços em branco no final das linhas
+  "files.trimFinalNewlines": true, // Remove newlines extras no final do arquivo
+  "files.autoSave": "onFocusChange", // Salva ao mudar de aba/foco
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // PRETTIER - Configurações Específicas
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "prettier.enable": true,
+  "prettier.requireConfig": false, // Permite formatar mesmo sem .prettierrc (embora o script crie um)
+  "prettier.useEditorConfig": true, // Respeita as regras de indentação do .editorconfig
+  "prettier.singleQuote": true, // Força aspas simples (configurado em .prettierrc)
+  "prettier.semi": true, // Força ponto e vírgula (configurado em .prettierrc)
+  "prettier.tabWidth": 2, // Configuração de fallback
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "avoid",
+  "prettier.printWidth": 80,
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // FORMATADORES POR LINGUAGEM (Prettier)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[less]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // PYTHON (Black, Pylint e Regras EditorConfig/Black)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "[python]": {
+    "editor.tabSize": 4, // Python usa 4 espaços (PEP8/Black)
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter", // Define Black como formatador (requer extensão Black Formatter)
+    "editor.rulers": [88] // Limite de linha do Black formatter
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // MARKDOWN (Exceções de formatação)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on", // Quebra linha em markdown
+    "files.trimTrailingWhitespace": false // Preserva espaços no final (para quebra de linha manual)
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // GIT
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TERMINAL
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "terminal.integrated.defaultProfile.linux": "zsh", // Perfil padrão para Linux
+  "terminal.integrated.fontFamily": "MesloLGS NF", // Fonte (exemplo, deve ser ajustado pelo usuário)
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // INTERFACE
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "breadcrumbs.enabled": true,
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 80,
+  "editor.renderWhitespace": "boundary",
+  "workbench.startupEditor": "none",
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SUGESTÕES E AUTOCOMPLETE
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  }
+}
+
